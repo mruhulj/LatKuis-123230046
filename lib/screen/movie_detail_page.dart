@@ -7,7 +7,6 @@ class MovieDetailPage extends StatelessWidget {
 
   const MovieDetailPage({super.key, required this.movie});
 
-  // Fungsi untuk membuka link Wikipedia
   Future<void> _launchWiki() async {
     final Uri url = Uri.parse(movie.wikiUrl);
     if (!await launchUrl(url)) {
@@ -18,9 +17,7 @@ class MovieDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(movie.title),
-      ),
+      appBar: AppBar(title: Text(movie.title)),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -30,7 +27,8 @@ class MovieDetailPage extends StatelessWidget {
               child: Image.network(
                 movie.posterUrl,
                 height: 300,
-                errorBuilder: (context, error, stackTrace) => const Icon(Icons.broken_image, size: 100),
+                errorBuilder: (context, error, stackTrace) =>
+                    const Icon(Icons.broken_image, size: 100),
               ),
             ),
             const SizedBox(height: 16),
@@ -39,14 +37,29 @@ class MovieDetailPage extends StatelessWidget {
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
-            Text('Tahun Rilis: ${movie.year}', style: const TextStyle(fontSize: 16)),
+            Text(
+              'Tahun Rilis: ${movie.year}',
+              style: const TextStyle(fontSize: 16),
+            ),
             Text('Genre: ${movie.genre}', style: const TextStyle(fontSize: 16)),
-            Text('Rating: ${movie.rating}', style: const TextStyle(fontSize: 16)),
+            Text(
+              'Rating: ${movie.rating}',
+              style: const TextStyle(fontSize: 16),
+            ),
             const Divider(),
-            Text('Sutradara: ${movie.director}', style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
-            Text('Pemeran: ${movie.cast}', style: const TextStyle(fontSize: 16)),
+            Text(
+              'Sutradara: ${movie.director}',
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+            ),
+            Text(
+              'Pemeran: ${movie.cast}',
+              style: const TextStyle(fontSize: 16),
+            ),
             const SizedBox(height: 16),
-            const Text('Sinopsis:', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            const Text(
+              'Sinopsis:',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
             const SizedBox(height: 8),
             Text(
               movie.synopsis,
@@ -60,7 +73,10 @@ class MovieDetailPage extends StatelessWidget {
                 icon: const Icon(Icons.open_in_browser),
                 label: const Text('Buka di Wikipedia'),
                 style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 12,
+                  ),
                 ),
               ),
             ),

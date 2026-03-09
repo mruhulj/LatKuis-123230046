@@ -48,4 +48,15 @@ List<Movie> dummyMovies = [
     synopsis: "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.",
     wikiUrl: "https://en.wikipedia.org/wiki/Interstellar_(film)",
   ),
+  Movie(
+    title: "F1 The Movie",
+    year: "2025",
+    genre: "Racing Car",
+    rating: "9/10",
+    posterUrl: "https://upload.wikimedia.org/wikipedia/en/3/38/F1_%282025_film%29.png",
+    director: "Ruhul",
+    cast: "Brad Pitt, Ruhul",
+    synopsis: "F1 (marketed as F1 the Movie) is a 2025 American sports drama film starring Brad Pitt as Formula One (F1) racing driver Sonny Hayes, who returns after a 30-year absence to save his former teammate's underdog team, APXGP, from collapse. The film was directed by Joseph Kosinski from a screenplay by Ehren Kruger. Damson Idris, Kerry Condon, Tobias Menzies, and Javier Bardem also star in supporting roles.",
+    wikiUrl: "https://en.wikipedia.org/wiki/F1_(film)",
+  ),
 ];

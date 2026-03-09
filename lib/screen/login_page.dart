@@ -16,16 +16,20 @@ class _LoginPageState extends State<LoginPage> {
     String username = _usernameController.text;
     String password = _passwordController.text;
 
-    // Validasi simulasi: Gunakan 3 digit terakhir NIM di password
-    // Ganti "123" dengan 3 digit NIM Anda saat pengetesan
-    if (username.isNotEmpty && password == "123") {
+    if (username.isNotEmpty && password == "046") {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const MovieListPage()),
+        MaterialPageRoute(
+          builder: (context) => MovieListPage(username: username),
+        ),
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Login Gagal! Pastikan password adalah 3 digit terakhir NIM.')),
+        const SnackBar(
+          content: Text(
+            'Login Gagal! Pastikan password adalah 3 digit terakhir NIM.',
+          ),
+        ),
       );
     }
   }
@@ -33,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Login Kuis')),
+      appBar: AppBar(title: const Text('Login Latihan Kuis')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -50,16 +54,13 @@ class _LoginPageState extends State<LoginPage> {
             TextField(
               controller: _passwordController,
               decoration: const InputDecoration(
-                labelText: 'Password (3 digit NIM)',
+                labelText: 'Password (3 digit NIM : 046)',
                 border: OutlineInputBorder(),
               ),
               obscureText: true,
             ),
             const SizedBox(height: 24),
-            ElevatedButton(
-              onPressed: _login,
-              child: const Text('Login'),
-            ),
+            ElevatedButton(onPressed: _login, child: const Text('Login')),
           ],
         ),
       ),
